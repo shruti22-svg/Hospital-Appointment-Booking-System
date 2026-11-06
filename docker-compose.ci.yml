@@ -1,4 +1,4 @@
-services:
+sservices:
   app:
     build: .
     environment:
@@ -10,6 +10,12 @@ services:
   chrome:
     image: selenium/standalone-chrome:4.27.0
     shm_size: 2gb
+    healthcheck:
+      test: ["CMD", "/opt/bin/check-grid.sh", "--host", "127.0.0.1", "--port", "4444"]
+      interval: 5s
+      timeout: 5s
+      start_period: 20s
+      retries: 20
     depends_on:
       - app
 
@@ -21,5 +27,7 @@ services:
       BASE_URL: http://app:5000
       SELENIUM_REMOTE_URL: http://chrome:4444/wd/hub
     depends_on:
-      - app
-      - chrome
+      app:
+        condition: service_started
+      chrome:
+        condition: service_healthy
