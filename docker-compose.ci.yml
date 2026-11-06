@@ -1,4 +1,4 @@
-sservices:
+services:
   app:
     build: .
     environment:
