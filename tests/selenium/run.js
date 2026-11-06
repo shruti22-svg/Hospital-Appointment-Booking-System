@@ -151,6 +151,8 @@ async function run() {
         await driver.wait(until.elementLocated(By.css("table")), 10000);
         const cancelBtn = await driver.findElement(By.css("[data-cancel]"));
         await cancelBtn.click();
+        const cancelAlert = await driver.wait(until.alertIsPresent(), 10000);
+        await cancelAlert.accept();
         await driver.wait(async () => {
             const text = await driver.findElement(By.id("appointments-message")).getText();
             return text.toLowerCase().includes("appointment cancelled");
