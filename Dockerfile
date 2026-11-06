@@ -12,7 +12,8 @@ RUN cd backend && npm ci --omit=dev
 
 COPY backend ./backend
 COPY frontend ./frontend
-COPY database ./database
+RUN mkdir -p /app/database
+COPY database/ /app/database/
 
 ENV PORT=5000
 ENV HOST=0.0.0.0
