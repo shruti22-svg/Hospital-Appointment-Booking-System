@@ -1,0 +1,11 @@
+{
+  "name": "hospital-selenium-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node run.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.27.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient login</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="page-head">
+            <h1>Patient login</h1>
+            <p>Sign in to open your dashboard.</p>
+        </div>
+        <form id="login-form" class="card form-narrow">
+            <p id="banner" class="message"></p>
+            <label>Email<input id="login-email" name="email" type="email" required></label>
+            <label>Password<input id="login-password" name="password" type="password" required></label>
+            <button id="login-btn" type="submit">Login</button>
+            <p id="login-message" class="message"></p>
+            <p>New patient? <a href="/register.html">Register here</a></p>
+        </form>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+</html>

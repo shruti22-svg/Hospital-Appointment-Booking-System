@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient registration</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="page-head">
+            <h1>Patient registration</h1>
+            <p>Create an account to book hospital appointments.</p>
+        </div>
+        <form id="register-form" class="card form-narrow">
+            <label>Full name<input id="patient-name" name="name" required placeholder="Your name"></label>
+            <label>Email<input id="patient-email" name="email" type="email" required placeholder="you@email.com"></label>
+            <label>Password<input id="patient-password" name="password" type="password" minlength="8" required placeholder="Min 8 characters"></label>
+            <button id="patient-register-btn" type="submit">Create account</button>
+            <p id="register-message" class="message"></p>
+            <p>Already registered? <a href="/login.html">Go to login</a></p>
+        </form>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Booking System</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <section class="hero">
+            <p class="eyebrow">Hospital Appointment Booking System</p>
+            <h1>Book a doctor visit in a few clicks.</h1>
+            <p>Register as a patient, search specialists, book an available slot, cancel if needed, or manage bookings as admin.</p>
+            <div class="actions">
+                <a class="btn" href="/register.html">Patient registration</a>
+                <a class="btn secondary" href="/login.html">Patient login</a>
+                <a class="btn" href="/admin-register.html">Admin registration</a>
+                <a class="btn secondary" href="/admin-login.html">Admin login</a>
+            </div>
+        </section>
+        <div class="cards">
+            <article class="card"><h3>1. Register & login</h3><p>Create a patient account, then open the dashboard.</p></article>
+            <article class="card"><h3>2. Search doctors</h3><p>Find doctors by specialization and view details.</p></article>
+            <article class="card"><h3>3. Book or cancel</h3><p>Confirm a free slot. Occupied slots are rejected.</p></article>
+            <article class="card"><h3>4. Admin control</h3><p>Admins view and update every appointment.</p></article>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script>HABS.renderHeader("home");</script>
+</body>
+</html>

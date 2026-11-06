@@ -1,0 +1,11 @@
+{
+  "name": "hospital-appointment-booking-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hospital Appointment Booking System with Jenkins, Docker, and Selenium tests",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "node tests/run-tests.js",
+    "test:selenium": "node tests/selenium/run.js"
+  }
+}

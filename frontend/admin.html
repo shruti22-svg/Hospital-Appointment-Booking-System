@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin appointment management</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="page-head">
+            <h1 id="admin-title">Admin appointment management</h1>
+            <p>View all bookings, update status, and manage doctors.</p>
+        </div>
+        <div class="stats" id="admin-stats"></div>
+        <p id="admin-message" class="message"></p>
+
+        <section class="card">
+            <h2>Filter appointments</h2>
+            <form id="filter-form" class="search-bar">
+                <label>Status
+                    <select id="status-filter">
+                        <option value="">All</option>
+                        <option>Booked</option>
+                        <option>Completed</option>
+                        <option>Cancelled</option>
+                    </select>
+                </label>
+                <button type="submit">Apply filter</button>
+            </form>
+        </section>
+
+        <h2>All appointments</h2>
+        <div id="admin-table" class="table-wrap"></div>
+
+        <h2>Registered patients</h2>
+        <div id="patients-table" class="table-wrap"></div>
+
+        <div class="split">
+            <section>
+                <h2>Doctor details</h2>
+                <div id="admin-doctors" class="cards"></div>
+            </section>
+            <form id="add-doctor-form" class="card">
+                <h2>Add doctor</h2>
+                <label>Name<input id="doctor-name" name="name" required></label>
+                <label>Specialization<input id="doctor-specialization" name="specialization" required></label>
+                <label>Qualification<input id="doctor-qualification" name="qualification"></label>
+                <label>Experience years<input id="doctor-experience" name="experience_years" type="number" min="0"></label>
+                <label>Fee<input id="doctor-fee" name="consultation_fee" type="number" min="0"></label>
+                <button id="add-doctor-btn" type="submit">Save doctor</button>
+            </form>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>

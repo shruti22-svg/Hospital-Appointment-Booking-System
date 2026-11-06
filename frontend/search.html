@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search doctors</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="page-head">
+            <h1>Search doctors by specialization</h1>
+            <p>Enter a specialization to display matching doctor details.</p>
+        </div>
+        <form id="search-form" class="card search-bar">
+            <label>Specialization
+                <input name="specialization" id="specialization-input" placeholder="Cardiology, Dermatology, Neurology..." required>
+            </label>
+            <button id="search-btn" type="submit">Search</button>
+        </form>
+        <p id="search-message" class="message"></p>
+        <div id="doctor-results" class="cards"></div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment confirmed</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="card form-narrow">
+            <h1>Appointment confirmed</h1>
+            <p id="confirm-text">Your booking was saved.</p>
+            <div class="actions">
+                <a class="btn" href="/appointments.html">View appointments</a>
+                <a class="btn secondary" href="/dashboard.html">Back to dashboard</a>
+            </div>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script>
+        if (!HABS.requirePatient()) {}
+        else {
+            HABS.renderHeader("appointments");
+            const id = HABS.queryParam("id");
+            const date = HABS.queryParam("date");
+            const time = HABS.queryParam("time");
+            const doctor = HABS.queryParam("doctor");
+            document.getElementById("confirm-text").textContent =
+                `Appointment #${id} with ${doctor} on ${date} at ${time} is confirmed.`;
+        }
+    </script>
+</body>
+</html>

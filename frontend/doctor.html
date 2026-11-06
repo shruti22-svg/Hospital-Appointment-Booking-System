@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book appointment</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header id="site-header" class="topbar"></header>
+    <main>
+        <div class="page-head">
+            <a class="ghost-link" href="/doctors.html">Back to doctors</a>
+            <h1 id="book-title">Doctor details & booking</h1>
+        </div>
+        <div class="split">
+            <article id="doctor-detail" class="card"></article>
+            <form id="book-form" class="card">
+                <h2>Appointment booking</h2>
+                <label>Date<input id="book-date" name="date" type="date" required></label>
+                <p>Select an available time slot</p>
+                <div id="slot-list" class="slots"></div>
+                <input type="hidden" id="selected-slot" name="time">
+                <button type="submit">Confirm booking</button>
+                <p id="book-message" class="message"></p>
+            </form>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/doctor.js"></script>
+</body>
+</html>
