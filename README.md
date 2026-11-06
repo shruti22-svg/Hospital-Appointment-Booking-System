@@ -40,26 +40,31 @@ npm install
 npm test
 ```
 
-## Docker
+## Docker + Jenkins (automated)
 
-```bash
-docker compose up --build
+1. Start **Docker Desktop** and wait until it is running.
+2. From the project folder run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start-devops.ps1
 ```
 
-App: http://localhost:5000
+That script starts Docker if needed, builds the app container, and starts Jenkins.
 
-CI Selenium stack:
+- App: http://localhost:5000
+- Jenkins: http://localhost:8081
+- Jenkins login: `admin` / `admin123`
+- Pipeline job: `hospital-booking` → **Build Now**
 
-```bash
+Manual commands:
+
+```powershell
+docker compose up -d --build
+docker compose -f docker-compose.jenkins.yml up -d --build
+```
+
+CI tests only:
+
+```powershell
 docker compose -f docker-compose.ci.yml up --build --abort-on-container-exit --exit-code-from tests
 ```
-
-## Jenkins
-
-1. Push this repo to GitHub.
-2. In Jenkins, create a **Pipeline** job.
-3. Set SCM to this GitHub repository.
-4. Script path: `Jenkinsfile`.
-5. Jenkins agent needs Node.js, Docker, and Docker Compose.
-
-The pipeline installs dependencies, runs API tests, builds the Docker image, then runs Selenium tests in Docker.

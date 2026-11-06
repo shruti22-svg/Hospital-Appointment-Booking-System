@@ -1,0 +1,6 @@
+Jenkins URL: http://localhost:8081
+Username: admin
+Password: admin123
+
+Hospital app: http://localhost:5000
+Hospital demo admin: admin@hospital.com / Admin@123

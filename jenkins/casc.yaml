@@ -1,0 +1,39 @@
+jenkins:
+  systemMessage: "Hospital Appointment Booking System CI"
+  numExecutors: 2
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin123"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+
+unclassified:
+  location:
+    url: "http://localhost:8081/"
+
+jobs:
+  - script: >
+      pipelineJob('hospital-booking') {
+        description('Docker + Selenium CI for Hospital Appointment Booking System')
+        definition {
+          cpsScm {
+            scm {
+              git {
+                remote {
+                  url('https://github.com/shruti22-svg/Hospital-Appointment-Booking-System.git')
+                }
+                branches('*/master')
+              }
+            }
+            scriptPath('Jenkinsfile')
+            lightweight(true)
+          }
+        }
+      }

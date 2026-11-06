@@ -7,6 +7,7 @@ RUN apt-get update \
 WORKDIR /app
 
 COPY backend/package.json backend/package-lock.json ./backend/
+ENV npm_config_build_from_source=true
 RUN cd backend && npm ci --omit=dev
 
 COPY backend ./backend

@@ -1,0 +1,19 @@
+services:
+  jenkins:
+    build: ./jenkins
+    container_name: hospital-jenkins
+    ports:
+      - "8081:8080"
+      - "50000:50000"
+    user: root
+    environment:
+      CASC_JENKINS_CONFIG: /var/jenkins_home/casc.yaml
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - ./jenkins/casc.yaml:/var/jenkins_home/casc.yaml:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:

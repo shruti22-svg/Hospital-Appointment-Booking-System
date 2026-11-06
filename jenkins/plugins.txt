@@ -1,0 +1,7 @@
+configuration-as-code
+job-dsl
+workflow-aggregator
+git
+docker-workflow
+plain-credentials
+credentials-binding
